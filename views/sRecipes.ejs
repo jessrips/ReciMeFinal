@@ -1,0 +1,64 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+<div class="jumbotron">
+    <h1>ReciMe</h1>
+    <p> This is where your recipes are stored!</p>
+</div>
+
+<h2>Your Go-To Recipes</h2>
+<br>
+
+      <table class="table table-bordered">
+        <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Difficulty</th>
+                <th>Website</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+          <% items.forEach(item => { %>
+               <tr>
+                 <td><%= item.item %></td>
+                 <td><%= item.recipeType %></td>
+                 <td><%=item.difficulty %></td>
+                 <td><a href="<%= item.sourceLink %> ">Go!</a></td>
+                 <td><a href="/savedRecipes/remove/<%=item._id %>">Remove</a></td>
+              </tr>
+          <% }) %>
+      </table><br>
+
+<h2>Add a recipe to your collection:</h2> <br>
+<br>-------------------------------------<br>
+<form method="post" action="savedRecipes">
+  Enter your recipe title:
+  <input type="text"
+         name="item"
+         placeholder="Recipe name">
+<br>-------------------------------------<br>
+  Enter the link to your recipe:
+  <input type="text"
+         name="slink"
+         placeholder="Recipe link">
+<br>-------------------------------------<br>
+  What type of recipe is this?
+  <select name="rtype">
+    <option>Breakfast</option>
+    <option>Lunch</option>
+    <option>Dinner</option>
+    <option>Baking/Dessert</option>
+  </select>
+  <br>-------------------------------------<br>
+<br>
+  How challenging is this recipe?:<br>
+   Easy <input type="radio" name="dif" value="Easy"><br>
+   Intermediate  <input type="radio" name="dif" value="Intermediate"><br>
+   Difficult <input type="radio" name="dif" value="Difficult"><br>
+   <hr>
+   <br>
+  <input type="submit" value="Add Recipe">
+</form>
+
+
+<%- include('bootfooter') -%>

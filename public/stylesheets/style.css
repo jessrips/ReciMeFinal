@@ -1,0 +1,20 @@
+body {
+  padding: 40px;
+  font: 12px "Lucida Console", "Courier New", monospace;
+}
+h1 {
+    font: 44px "Lucida Console", "Courier New", monospace;
+    color: #440099;
+}
+h2 {
+    font: 20px "Lucida Console", "Courier New", monospace;
+}
+h3 {
+    font: 16px "Lucida Console", "Courier New", monospace;
+}
+
+
+
+a {
+  color: #324ab2;
+}

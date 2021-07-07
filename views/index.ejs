@@ -1,0 +1,19 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+
+  <div class="jumbotron">
+    <h1> Recime </h1>
+    <p>Welcome to your cooking haven! </p>
+    <ul>
+      <% if (loggedIn) {%>
+      <li><a href="/profile">See your profile </a></li><br>
+      <li><a href="/savedRecipes">See your Recipes</a></li><br>
+      <li><a href="/form">Meaurement Tools</a></li><br>
+      <li><a href="/plannedMeals">Meal Planner</a></li><br>
+      <li><a href="/author">Website Author</a></li><br>
+      <% }
+      else {%>
+        Please <a href="/login">log in</a> to continue.
+      <%}  %>
+    </ul>
+  </div>

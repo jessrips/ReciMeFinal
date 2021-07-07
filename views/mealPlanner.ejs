@@ -1,0 +1,41 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+
+<div class="jumbotron">
+    <h1>ReciMe Meal Planner</h1>
+    <p> This is where you can plan your meals!</p>
+</div>
+
+<h2>Plan a Meal</h2>
+
+<form method="post" action="plannedMeals">
+ Title of meal?
+ <input type= "text" name= "item">
+ <br>
+What day are you planning to make this meal?
+<input type="date" name="dateTime">
+<br>
+  <input type="submit" value="Add Meal">
+</form>
+<br>
+
+<h2> Your Planned Meals</h2>
+
+<table class="table table-bordered">
+  <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+    <% items.forEach(item => { %>
+         <tr>
+           <td><%= item.item %></td>
+           <td><%= item.dateTime.toDateString() %></td>
+           <td><a href="/plannedMeals/remove/<%=item._id %>">Remove</a></td>
+        </tr>
+    <% }) %>
+</table><br>
+
+<%- include('bootfooter') -%>

@@ -1,0 +1,35 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+
+<!-- form.ejs -- allows user to convert measurements -->
+<div class="jumbotron">
+    <h1>  Measurement Converter </h1>
+
+</div>
+
+<form method="post" action="/convertMeasures">
+
+
+  Convert from:
+  <select name="type1">
+    <option>pints</option>
+    <option>cups</option>
+    <option>tablespoons</option>
+  </select>
+
+  Amount:
+  <input type="text"
+         name="type1amount"
+         placeholder=""><br>
+
+  Convert to:
+  <select name="type2">
+    <option>pints</option>
+    <option>cups</option>
+    <option>tablespoons</option>
+  </select>
+
+
+  <input type="submit" value="Convert">
+</form>
+<%- include('bootfooter') -%>
